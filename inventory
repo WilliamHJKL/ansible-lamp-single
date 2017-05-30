@@ -1,0 +1,5 @@
+[db]
+db1lampstack.example.demo
+db2lampstack.example.demo
+[web]
+web1lampstack.example.demo
