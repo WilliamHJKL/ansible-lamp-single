@@ -97,19 +97,18 @@
 					La liste des bases de données découvertes:<br />
 				</h3>
 			</div>
-			<?php
-				{% for host in groups['db'] %}
-                	$link = mysqli_connect('{{ hostvars[host]['inventory_hostname'] }}', '{{ hostvars[host].dbuser }}', '{{ hostvars[host].dbpass }}') or die(mysqli_connect_error($link));
-		        {% endfor %}
-		        $res = mysqli_query($link, "SHOW DATABASES;");
-		        while ($row = mysqli_fetch_assoc($res)) {?>
-	                <div class="col-sm-12">
-	                    <h4 class="mg-md  text-center"><?php
-	                        echo $row['Database'] . "<br />\n";?>
-	                    </h4>
-	            	</div>
-                <?php}
-		    ?>
+#			<?php
+#				{% for host in groups['db'] %}
+#                	$link = mysqli_connect('{{ hostvars[host]['inventory_hostname'] }}', '{{ hostvars[host].dbuser }}', '{{ hostvars[host].dbpass }}') or die(mysqli_connect_error($link));
+#		        {% endfor %}
+#		        $res = mysqli_query($link, "SHOW DATABASES;");
+#		        while ($row = mysqli_fetch_assoc($res)) {?>
+#	                <div class="col-sm-12">
+#	                    <h4 class="mg-md  text-center"><?php
+#	                        echo $row['Database'] . "<br />\n";?>
+#	                    </h4>
+#	            	</div>
+#		    ?>
 		</div>
 	</div>
 </div>
