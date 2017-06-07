@@ -12,9 +12,9 @@
 
     - name: Install index.php
       template:
-      src: ../templates/index.php.j2
-      dest: /var/www/html/index.php
-      backup: yes
+        src: ../templates/index.php.j2
+        dest: /var/www/html/index.php
+        backup: yes
 
     - name: Install a web page
       copy: src={{ item }} dest=/var/www/html
