@@ -11,10 +11,9 @@
         - libsemanage-python
 
     - name: Install a web page
-      template:
-        src: ../templates/index.php.j2
-        dest: /var/www/html/index.php
-        backup: yes
+      copy: src={{ item }} dest=/var/www/html
+      with_fileglob:
+              - files/*
 
     - name: Open port
       firewalld: "port={{ item }}/tcp state=enabled zone=public permanent=yes immediate=true"

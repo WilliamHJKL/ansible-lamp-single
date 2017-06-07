@@ -1,5 +1,5 @@
 # vim:se ft=ansible
-- hosts: web
+- hosts: all
   name: Install and configure httpd
   tasks:
     - name: Install httpd
